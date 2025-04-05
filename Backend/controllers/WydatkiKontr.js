@@ -1,4 +1,4 @@
-
+const Wydatek = require('../models/wydatekModel')
 exports.dodajWydatek = async (req,res)=>{
 
     const {Tytuł,ilość,typ,data,Kategoria,Opis} = req.body

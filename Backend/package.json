@@ -6,9 +6,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
   },
-  "author": "",
+  "author": "muminkodowanie",
   "license": "ISC",
-  "description": "",
+  "description": "App for managing finances",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",

@@ -13,12 +13,6 @@ const Przychod = new mongoose.Schema({
         maxLength:15,
         trim:true
     },
-    ilość: {
-        type:Number,
-        required: true,
-        maxLength:15,
-        trim:true
-    },
     typ: {
         type: String,
         default: 'Przychód'
@@ -30,7 +24,8 @@ const Przychod = new mongoose.Schema({
         trim: true
     },
     Kategoria: {
-        type: Number,
+        type: String,
+        enum: ['Jedzenie', 'Transport', 'Mieszkanie', 'Rozrywka', 'Inne'],
         required: true,
         maxLength: 20,
         trim: true

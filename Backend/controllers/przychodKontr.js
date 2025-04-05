@@ -1,4 +1,4 @@
-
+const Przychod = require('../models/przychodModel')
 exports.dodajPrzychod = async (req,res)=>{
 
     const {Tytuł,ilość,typ,data,Kategoria,Opis} = req.body
