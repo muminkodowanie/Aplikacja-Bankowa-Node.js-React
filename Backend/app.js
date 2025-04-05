@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const { db } = require('./database/databasemongo');
+const {readdirSync} = require('fs');
+const { route } = require('./routes/transakcje');
 require('dotenv').config();
 
 const app = express()
@@ -13,6 +15,8 @@ app.use(cors())
 app.get('/',(req,res)=>{
     res.send('Test1234')
 })
+
+readdirSync('./routes').map((route) => app.use('/api/v1',require('./routes/' + route)))
 const server = () =>
 {
     db()
