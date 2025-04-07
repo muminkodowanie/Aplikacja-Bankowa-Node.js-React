@@ -47,6 +47,33 @@ const NavitopStyled = styled.div`
         justify-content:space-between;
         align-items: center;
         right: 0;
+        gap: 2.5rem;
+        
+        h2 {
+
+            font-size: 1.5rem;
+            color:rgb(0, 0, 0);
+            background-color: #EEEEEE;
+            display: grid;
+            width: 30%;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            border-radius: 20%;
+            cursor: pointer;
+        }
+        h3 {
+            font-size: 1rem;
+            display:flex;
+            flex-direction: row;
+            color:rgb(255, 255, 255);
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+
+            background-color: #FFB7BA;
+            border-radius: 20%;
+        }
 
 `;
 

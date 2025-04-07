@@ -45,19 +45,19 @@ function Navigation({active, setActive}) { //jezeli tutaj nie dam {} to nie bedz
 }
 
 const NawigacjaStyled = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 1.5rem 0;
+    display: flex; //flexuje menu
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    padding: 1.5rem 0; //odstepy wewnetrzne od kontenreta
     background-color: #FFFFFF;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 13%;
+    width: 13%; 
     height: calc(100vh - 7%); //rozciaga na dol
-    position: fixed;
+    position: fixed; //popzycja  zafixowana
     top: 7%;
     left: 0;
-    z-index: 500;
+    z-index: 500; //z-index zeby nie zaslanialo innych elementow
 
 
     .Elementy_Menu {
