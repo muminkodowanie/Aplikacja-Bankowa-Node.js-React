@@ -25,3 +25,28 @@ export const menuItems = [
 
 
 ]
+
+export const menuItems2 = [
+    {
+        id: 4,
+        title: 'Wydatki',
+        icon: Ikonki.pulpitIcon,
+        link: '/pulpit',
+
+
+    },    {
+        id: 5,
+        title: 'Przychody',
+        icon: Ikonki.wyszukajIcon,
+        link: '/wydatki',
+
+    },
+    {
+        id:6,
+        title:'Wpływy',
+        icon:Ikonki.radioIcon,
+        link:'/diagramy',
+    }
+
+
+]

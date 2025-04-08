@@ -12,6 +12,7 @@ function Navitop() {
             <h2>...</h2>
             <h3>Dodaj wpływ</h3>
             <h4>Uzytkownika</h4>
+            <h5>v</h5>
             </div>
 
         </NavitopStyled>
@@ -74,6 +75,8 @@ const NavitopStyled = styled.div`
             background-color: #FFB7BA;
             border-radius: 20%;
         }
+            h5 {
+            left: 0;}
 
 `;
 

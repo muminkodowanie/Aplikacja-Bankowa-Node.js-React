@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { menuItems } from '../../utilities/menuItems';
+import { menuItems2 } from '../../utilities/menuItems';
 
 function Navigation({active, setActive}) { //jezeli tutaj nie dam {} to nie bedzie zmienialo sie active
     
@@ -28,14 +29,21 @@ function Navigation({active, setActive}) { //jezeli tutaj nie dam {} to nie bedz
                 </ul>
 
                 <div className="Historia_Operacji">Historia</div>
-                {/*
-                <div className="bottom-navbar"> 
-                    <li>
-                        aha
-                    </li>
 
-                </div>
-                */}
+                    <ul className="menu">
+                        {menuItems2.map((item)=>(
+                            <li
+                                key={item.id}
+                                onClick={() => setActive(item.id)}
+                                className={active === item.id ? 'active' : ''}
+                            >
+                                {item.icon}
+                                <span>{item.title}</span>
+                            </li>
+                        ))}
+
+                    </ul>
+                
 
 
             </NawigacjaStyled>
@@ -97,6 +105,7 @@ const NawigacjaStyled = styled.div`
         margin-top: 1rem;
         color: #694242;
         padding: 0 2rem;
+        boldness: bold;
     }
 
  .active {
