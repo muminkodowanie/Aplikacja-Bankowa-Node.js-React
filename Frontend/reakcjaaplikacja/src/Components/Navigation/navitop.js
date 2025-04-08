@@ -9,8 +9,7 @@ function Navitop() {
 
             <h1>muminkodowanie</h1>
             <div className="zprawejNavitop">
-            <h2>...</h2>
-            <h3>Dodaj wpływ</h3>
+            <h3>Dodaj operację</h3>
             <h4>Uzytkownika</h4>
             <h5>v</h5>
             </div>
@@ -50,19 +49,6 @@ const NavitopStyled = styled.div`
         right: 0;
         gap: 2.5rem;
         
-        h2 {
-
-            font-size: 1.5rem;
-            color:rgb(0, 0, 0);
-            background-color: #EEEEEE;
-            display: grid;
-            width: 30%;
-            justify-content: center;
-            text-align: center;
-            align-items: center;
-            border-radius: 20%;
-            cursor: pointer;
-        }
         h3 {
             font-size: 1rem;
             display:flex;

@@ -105,7 +105,7 @@ const NawigacjaStyled = styled.div`
         margin-top: 1rem;
         color: #694242;
         padding: 0 2rem;
-        boldness: bold;
+        
     }
 
  .active {

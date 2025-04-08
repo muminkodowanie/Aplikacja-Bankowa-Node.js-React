@@ -8,6 +8,7 @@ import Wydatki from './Components/wydatki';
 import Okno from './Components/okno';
 import Przychody from './Components/przychody';
 import Wplywy from './Components/wplywy';
+import Wyszukiwanie from './Components/wyszukaj';
 
 
 function App() {
@@ -21,20 +22,13 @@ function App() {
       return <Pulpit/>
 
     case 2:
-      return <Przychody/>
+      return <Wyszukiwanie/>
 
-    case 3:
-      return <Przychody/>
-    
     case 4:
       return <Wydatki/>
 
     case 5:
       return <Przychody/>
-
-    case 6:
-      return <Wplywy/>
-
 
     default:
       return <Pulpit/>

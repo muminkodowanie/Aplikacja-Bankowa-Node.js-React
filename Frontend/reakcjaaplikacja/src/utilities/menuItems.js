@@ -15,14 +15,7 @@ export const menuItems = [
         icon: Ikonki.wyszukajIcon,
         link: '/wyszukaj',
 
-    },
-    {
-        id:3,
-        title:'Diagramy',
-        icon:Ikonki.radioIcon,
-        link:'/diagramy',
     }
-
 
 ]
 
