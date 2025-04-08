@@ -11,11 +11,19 @@ import Wyszukiwanie from './Components/wyszukaj';
 
 
 function App() {
-  const [active,setActive] = React.useState(1);
+  const [active, setActive] = React.useState(() => {
+    const zapisanaKarta = localStorage.getItem('activeTab');
+    return zapisanaKarta ? parseInt(zapisanaKarta, 10) : 1;
+  });
+
+
+
+  React.useEffect(() => {
+    localStorage.setItem('activeTab', active);
+  }, [active]);
+
   const wyswietDane =() => {
 
-
-    
     switch(active){
     case 1:
       return <Pulpit/>
