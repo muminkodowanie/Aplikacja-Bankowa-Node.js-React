@@ -7,7 +7,6 @@ import Pulpit from './Components/pulpit';
 import Wydatki from './Components/wydatki';
 import Okno from './Components/okno';
 import Przychody from './Components/przychody';
-import Wplywy from './Components/wplywy';
 import Wyszukiwanie from './Components/wyszukaj';
 
 
@@ -29,6 +28,7 @@ function App() {
 
     case 5:
       return <Przychody/>
+
 
     default:
       return <Pulpit/>
