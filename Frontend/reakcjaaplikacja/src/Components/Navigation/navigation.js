@@ -23,7 +23,7 @@ function Navigation({active, setActive}) { //jezeli tutaj nie dam {} to nie bedz
                     ))}    
                 </ul>
 
-                <div className="Historia_Operacji">Historia</div>
+                <div className="Elementy_Menu">Historia</div>
 
                     <ul className="menu">
                         {menuItems2.map((item)=>(
@@ -77,6 +77,7 @@ const NawigacjaStyled = styled.div`
         padding: 0;
         margin: 0;
         width: 100%; // Ustaw szerokość na 100%
+        margin-bottom: 1rem; 
     }
 
     .menu li {

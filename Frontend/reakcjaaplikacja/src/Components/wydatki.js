@@ -15,7 +15,7 @@ function Wydatki() {
                     if (!acc[date]) {
                         acc[date] = { date, value: 0 };
                     }
-                    acc[date].value += item.ilość;
+                    acc[date].value += -item.ilość;
                     return acc;
                 }, {});
                 const formattedData = Object.values(groupedData).sort((a, b) => new Date(a.date) - new Date(b.date));
@@ -84,6 +84,7 @@ const WydatekStyled = styled.div`
     margin-top: -2rem;
 
     h2 {
+    margin-top: -2rem;
     margin-bottom: 1rem;
         color: rgb(219, 113, 113);
     }

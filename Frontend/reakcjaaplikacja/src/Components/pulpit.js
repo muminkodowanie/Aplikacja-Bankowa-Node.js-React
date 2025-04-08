@@ -175,6 +175,7 @@ function Pulpit() {
 
 const PulpitStyled = styled.div`
     .DashboardKontener {
+        margin-top: -4rem;
         display: flex;
         flex-direction: column;
         gap: 2rem;

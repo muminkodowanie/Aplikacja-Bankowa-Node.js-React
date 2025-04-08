@@ -30,7 +30,7 @@ export const menuItems2 = [
     },    {
         id: 5,
         title: 'Przychody',
-        icon: Ikonki.wyszukajIcon,
+        icon: Ikonki.przychodyIcon,
         link: '/wydatki',
 
     }

@@ -61,7 +61,7 @@ function Przychody() {
                 </div>
 
                 <div className="przychody-lista">
-                    Przychody lista:
+                    <h3>Przychody lista:</h3>
                     {data.length > 0 ? (
                         <div className="przychody-container">
                             {data.map((item, index) => (
@@ -84,9 +84,13 @@ const PrzychodyStyled = styled.div`
     margin-top: -2rem;
 
     h2 {
+    margin-top: -2rem;
     margin-bottom: 1rem;
         color: rgb(219, 113, 113);
     }
+    h3 {
+    color: rgb(219, 113, 113);
+     margin-bottom: 1rem;}
 
     .chart-container {
         background-color: #FFFFFF;
