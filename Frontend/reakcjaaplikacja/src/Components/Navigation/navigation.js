@@ -8,11 +8,6 @@ function Navigation({active, setActive}) { //jezeli tutaj nie dam {} to nie bedz
     return (
 
             <NawigacjaStyled>
-                {/* <div className="user">
-                    <h2 className="username">John Doe</h2>
-
-
-                </div> */}
                 <div className="Elementy_Menu">Menu</div>
 
                 <ul className="menu">
@@ -90,7 +85,7 @@ const NawigacjaStyled = styled.div`
         align-items: center;
         cursor: pointer; 
         transition: background-color 0.3s ease; // Dodaj efekt przejścia
-        gap: 10px; /* Odstęp między ikoną a tekstem */
+        gap: 10px; 
         padding: 10px 2rem;
         color: #694242;
         width: 100%;
@@ -98,8 +93,9 @@ const NawigacjaStyled = styled.div`
     }
 
     .menu img {
-        width: 24px; /* Ustaw szerokość ikony */
-        height: 24px; /* Ustaw wysokość ikony */
+        width: 24px; 
+        height: 24px; 
+        
     }
     .Historia_Operacji {
         margin-top: 1rem;

@@ -23,7 +23,7 @@ export const menuItems2 = [
     {
         id: 4,
         title: 'Wydatki',
-        icon: Ikonki.pulpitIcon,
+        icon: Ikonki.wydatkiIcon,
         link: '/pulpit',
 
 
@@ -33,12 +33,6 @@ export const menuItems2 = [
         icon: Ikonki.wyszukajIcon,
         link: '/wydatki',
 
-    },
-    {
-        id:6,
-        title:'Wpływy',
-        icon:Ikonki.radioIcon,
-        link:'/diagramy',
     }
 
 

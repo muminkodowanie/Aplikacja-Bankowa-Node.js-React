@@ -61,7 +61,7 @@ function Wydatki() {
                 </div>
 
                 <div className="wydatki-lista">
-                    Wydatki lista:
+                    <h3>Wydatki lista:</h3>
                     {data.length > 0 ? (
                         <div className="wydatki-container">
                             {data.map((item, index) => (
@@ -110,6 +110,10 @@ const WydatekStyled = styled.div`
             flex-direction: column;
             gap: 1rem;
         }
+
+    h3 {
+        color: rgb(219, 113, 113);
+        margin-bottom: 1rem;}
 
         .wydatek-item {
             background-color: #F9F9F9;
