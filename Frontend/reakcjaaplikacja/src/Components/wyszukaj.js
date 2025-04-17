@@ -11,12 +11,13 @@ function Wyszukiwanie () {
 
     
         <WyszukiwanieStyled>
+            <h2>Panel Wyszukiwania</h2>
             <InnerLayout>
-                <p>Testowik</p>
+                
                 <div className= "DashboardKontener">
 
                     <div className="sekcjaWyszukiwania">
-                        <h1>Wyszukiwanie</h1>
+
 
                         <table className="TabelaWyszukiwania">
                             <thead>
@@ -74,10 +75,26 @@ function Wyszukiwanie () {
 const WyszukiwanieStyled = styled.div`
 
 
+margin-top: -2rem;
+
+h2 {
+    margin-top: -2rem;
+    color: rgb(219, 113, 113);
+    margin-left: 1.5rem;
+    margin-bottom: -1rem;
+    
+   
+}
+
+
 .DashboardKontener {
-display: flex;
-flex-direction: column;
-padding: 2rem;
+ background-color: #FFFFFF;
+        border: 1px solid #DDD;
+        border-radius: 8px;
+        padding: 1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+
 
 
 
@@ -87,7 +104,8 @@ padding: 2rem;
     padding: 2.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    
+
+
 
 }
 .TabelaWyszukiwania {
