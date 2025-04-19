@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
 function Navitop() {
     const [menuWidoczne, setMenuVisible] = useState(false);
     const [modalWidoczny, ustawModalWidoczny] = useState(false);
     const [typOperacji, ustawTypOperacji] = useState(null);
+    const [daneFormularza, ustawDaneFormularza] = useState({
+        Tytuł: '',
+        ilość: '',
+        data: '',
+        Kategoria: '',
+        Opis: ''
+    });
 
     const wysuwaneMenu = () => setMenuVisible(!menuWidoczne);
     const wyloguj = () => console.log("Wylogowano");
@@ -12,11 +20,29 @@ function Navitop() {
     const zamknijModal = () => {
         ustawModalWidoczny(false);
         ustawTypOperacji(null);
+        ustawDaneFormularza({
+            Tytuł: '',
+            ilość: '',
+            data: '',
+            Kategoria: '',
+            Opis: ''
+        });
     };
-    const wykonajTypOperacji = (type) => ustawTypOperacji(type);
-    const wykonajDodajOperacje = () => {
-        console.log(`Dodano operację: ${typOperacji}`);
-        zamknijModal();
+
+    const obsluzZmianeInputu = (e) => {
+        const { name, value } = e.target;
+        ustawDaneFormularza({ ...daneFormularza, [name]: value });
+    };
+
+    const dodajOperacje = async () => {
+        try {
+            const endpoint = typOperacji === 'wydatek' ? '/api/v1/wydatek' : '/api/v1/przychod';
+            await axios.post(endpoint, daneFormularza);
+            console.log(`Dodano operację: ${typOperacji}`);
+            zamknijModal();
+        } catch (error) {
+            console.error('Błąd podczas dodawania operacji:', error);
+        }
     };
 
     return (
@@ -33,24 +59,69 @@ function Navitop() {
                     )}
                 </div>
             </div>
+
             {modalWidoczny && (
                 <div className="modal">
                     <div className="modal-content">
                         {!typOperacji ? (
                             <>
                                 <h2>Wybierz typ operacji</h2>
-                                <button onClick={() => wykonajTypOperacji('wydatek')}>Wydatek</button>
-                                <button onClick={() => wykonajTypOperacji('wplyw')}>Wpływ</button>
+                                <button onClick={() => ustawTypOperacji('wydatek')}>Wydatek</button>
+                                <button onClick={() => ustawTypOperacji('przychod')}>Wpływ</button>
                                 <button onClick={zamknijModal}>Anuluj</button>
                             </>
                         ) : (
                             <>
                                 <h2>Dodaj {typOperacji === 'wydatek' ? 'wydatek' : 'wpływ'}</h2>
                                 <form>
-                                    <input type="text" placeholder="Tytuł" required />
-                                    <input type="number" placeholder="Kwota" required />
-                                    <button type="button" onClick={wykonajDodajOperacje}>Dodaj</button>
-                                    <button type="button" onClick={zamknijModal}>Anuluj</button>
+                                    <input
+                                        type="text"
+                                        name="Tytuł"
+                                        placeholder="Tytuł"
+                                        value={daneFormularza.Tytuł}
+                                        onChange={obsluzZmianeInputu}
+                                        required
+                                    />
+                                    <input
+                                        type="number"
+                                        name="ilość"
+                                        placeholder="Kwota"
+                                        value={daneFormularza.ilość}
+                                        onChange={obsluzZmianeInputu}
+                                        required
+                                    />
+                                    <input
+                                        type="date"
+                                        name="data"
+                                        value={daneFormularza.data}
+                                        onChange={obsluzZmianeInputu}
+                                        required
+                                    />
+                                    <select
+                                        name="Kategoria"
+                                        value={daneFormularza.Kategoria}
+                                        onChange={obsluzZmianeInputu}
+                                        required
+                                    >
+                                        <option value="">Wybierz kategorię</option>
+                                        <option value="Jedzenie">Jedzenie</option>
+                                        <option value="Transport">Transport</option>
+                                        <option value="Mieszkanie">Mieszkanie</option>
+                                        <option value="Rozrywka">Rozrywka</option>
+                                        <option value="Inne">Inne</option>
+                                    </select>
+                                    <textarea
+                                        name="Opis"
+                                        placeholder="Opis"
+                                        value={daneFormularza.Opis}
+                                        onChange={obsluzZmianeInputu}
+                                    />
+                                    <button type="button" onClick={dodajOperacje}>
+                                        Dodaj
+                                    </button>
+                                    <button type="button" onClick={zamknijModal}>
+                                        Anuluj
+                                    </button>
                                 </form>
                             </>
                         )}
@@ -184,7 +255,7 @@ const NavitopStyled = styled.div`
                 flex-direction: column;
                 gap: 1rem;
 
-                input {
+                input, select, textarea {
                     padding: 0.5rem;
                     border: 1px solid #ddd;
                     border-radius: 8px;
